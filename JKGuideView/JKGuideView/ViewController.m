@@ -31,11 +31,11 @@
                          @"新增: 功能5，一大堆啊呀一大堆字数不能太多了",
                          ];
 
-    CGRect frame1 = CGRectMake(220, 360, 40, 40);
+    CGRect frame1 = CGRectMake(220, 360, 80, 80);
     CGRect frame2 = CGRectMake(200, 60, 100, 80);
     CGRect frame3 = CGRectMake(0, 360, 120, 80);
     CGRect frame4 = CGRectMake(200, 360, 150, 80);
-    CGRect frame5 = CGRectMake(220, 360, 40, 40);
+    CGRect frame5 = CGRectMake(220, 360, 80, 80);
 
     NSArray *frames = @[
                         NSStringFromCGRect(frame1),
