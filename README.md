@@ -5,6 +5,7 @@
 
 原作者是写的 `UIViewController`,现改为 `UIView`。
 对原作者的一些布局算法做了调整。
-
+####简单介绍
+简书 <http://www.jianshu.com/p/48bcec0eb748>
 ###Demo Gif
 ![](https://github.com/lionnner/GuideView/blob/master/demo.gif)
