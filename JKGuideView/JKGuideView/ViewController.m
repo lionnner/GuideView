@@ -44,7 +44,8 @@
                         NSStringFromCGRect(frame4),
                         NSStringFromCGRect(frame5),
                         ];
-    JKGuideView *guideView = [[JKGuideView alloc] initWithFrame:[UIScreen mainScreen].bounds titles:titles frames:frames];
+//    JKGuideView *guideView = [[JKGuideView alloc] initWithFrame:[UIScreen mainScreen].bounds titles:titles frames:frames];
+    JKGuideView *guideView = [[JKGuideView alloc] initWithFrame:[UIScreen mainScreen].bounds titles:titles frames:frames alpha:0.5];
     [self.view addSubview:guideView];
 }
 

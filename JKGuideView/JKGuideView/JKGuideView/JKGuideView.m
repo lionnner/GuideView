@@ -31,6 +31,8 @@
     CGFloat _titleLabH;
     NSMutableArray *_framesArr;
     NSMutableArray *_titlesArr;
+    
+    CGFloat _alpha;
 }
 
 @end
@@ -39,12 +41,18 @@
 
 - (instancetype)initWithFrame:(CGRect)frame titles:(NSArray *)titles frames:(NSArray *)frames
 {
+    return [self initWithFrame:frame titles:titles frames:frames alpha:0.75];
+}
+
+- (instancetype)initWithFrame:(CGRect)frame titles:(NSArray *)titles frames:(NSArray *)frames alpha:(CGFloat)alpha
+{
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
         self.translatesAutoresizingMaskIntoConstraints = NO;
         _framesArr = [frames mutableCopy];
         _titlesArr = [titles mutableCopy];
+        _alpha = alpha;
         [self createViews];
         [self setCheckBtn];
     }
@@ -54,19 +62,19 @@
 - (void)createViews
 {
     _topView = [[UIView alloc] init];
-    _topView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.75];
+    _topView.backgroundColor = [UIColor colorWithWhite:0 alpha:_alpha];
     [self addSubview:_topView];
     
     _bottomView = [[UIView alloc] init];
-    _bottomView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.75];
+    _bottomView.backgroundColor = [UIColor colorWithWhite:0 alpha:_alpha];
     [self addSubview:_bottomView];
     
     _leftView = [[UIView alloc] init];
-    _leftView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.75];
+    _leftView.backgroundColor = [UIColor colorWithWhite:0 alpha:_alpha];
     [self addSubview:_leftView];
     
     _rightView = [[UIView alloc] init];
-    _rightView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.75];
+    _rightView.backgroundColor = [UIColor colorWithWhite:0 alpha:_alpha];
     [self addSubview:_rightView];
     
     _titleLab = [[UILabel alloc] init];
@@ -83,7 +91,7 @@
     _checkBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     
     _checkBtn.backgroundColor = [UIColor clearColor];
-    _checkBtn.layer.opacity = 0.75;
+    _checkBtn.layer.opacity = _alpha;
     [_checkBtn setBackgroundImage:[UIImage imageNamed:@"userGuideBtnBG_unClear"] forState:UIControlStateNormal];
     [_checkBtn addTarget:self action:@selector(resetBtnFrame) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_checkBtn];
